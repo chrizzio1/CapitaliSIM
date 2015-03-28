@@ -1,0 +1,34 @@
+<div ng-controller="View1Ctrl" class="">
+    <div class="content">
+        <div class="introduction">
+            debug:
+            <button ng-click="addMoney(100)">+ € 100</button>
+            <h1>Willkommen bei CapitaliSIM!</h1>
+            <p><strong>Kapitalismus ist einfach!</strong> Klicke auf "Aktivieren" um eine deiner Einnahmequellen zu aktivieren!
+                <br> Spare dein Geld und <strong>reinvestiere</strong>, um zu mehr Reichtum zu gelangen!</p>
+        </div>
+        <div class="game-info pull-left">
+            <span>Dein Cash:</span> <span class="money">{{money | currency:'€ '}}</span>
+        </div>
+        <div class="upgrades">
+            <button type="button" class="btn btn-default" ng-click="openModal('manager', 'view1/shopModal.html', manager)">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Manager
+            </button>
+            <button title="Coming soon!" type="button" class="btn btn-default" disabled="disabled">
+                <span class="glyphicon glyphicon-euro" aria-hidden="true"></span> Shop
+            </button>
+            <button title="Coming soon!" type="button" class="btn btn-default" disabled="disabled">
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Upgrades
+            </button>
+        </div>
+        <div class="clearfix"></div>
+        <h3>Deine Geldquellen:</h3>
+        <div class="cash-source-wrapper">
+            <div class="row">
+                <columnwrapper money="money" class="col-xs-6" ng-repeat="source in cashSources | orderBy: 'order'">
+                    <cash-source model="source" get-money="getMoney()" add-money="addMoney" reduce-money="reduceMoney"></cash-source>
+                </columnwrapper>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="manager">
+    <div class="text-align">
+        <div><strong>{{manager.name}}</strong></div>
+        <div style="margin-bottom: 10px;"><em>{{manager.description}}</em></div>
+        <button id="" class="btn btn-primary" ng-disabled="!isAffordable()" ng-click="buy()">Einstellen ({{manager.price | currency:'€ '}})</button>
+    </div>
+</div>
