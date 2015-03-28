@@ -82,6 +82,18 @@ angular.module('myApp.view1', ['ngRoute'])
         price: "10000",
         isBought: false,
         sourceID: 2
+    }, {
+        name: "Luigi",
+        description: "Wer sollte sich sonst um deine Pizza kümmern?",
+        price: "1000000",
+        isBought: false,
+        sourceID: 3
+    }, {
+        name: "Donut Man",
+        description: "Kümmert sich um deine Donut Shops.",
+        price: "5000000",
+        isBought: false,
+        sourceID: 4
     }]
 
     $scope.money = 0;
@@ -99,7 +111,7 @@ angular.module('myApp.view1', ['ngRoute'])
         return $scope.money;
     }
 
-    $scope.activateManager = function(sourceID) {        
+    $scope.activateManager = function(sourceID) {
         $scope.cashSources[sourceID].ismanaged = true;
     }
 
@@ -238,7 +250,7 @@ angular.module('myApp.view1', ['ngRoute'])
 
 .controller('ModalInstanceCtrl', function($scope, $modalInstance) {
 
-    
+
 
     $scope.ok = function() {
         $modalInstance.close();
