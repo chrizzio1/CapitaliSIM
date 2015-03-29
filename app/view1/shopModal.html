@@ -3,12 +3,11 @@
 </div>
 <div class="modal-body">
     <div class="text-center">
-        <p>Warum selber schuften, wenn man auch andere für sich schuften lassen kann? Sei klung und investiere in verlässliche Arbeitskräfte, so kommst du voran!</p>
+        <p>Warum selber schuften, wenn man auch andere für sich schuften lassen kann? Sei klug und investiere in verlässliche Arbeitskräfte, so kommst du voran!</p>
     </div>
     <hr>
     <div class="" ng-repeat="man in manager">
         <cash-manager ng-if="!man.isBought" get-money="getMoney()" activate-manager="activateManager" reduce-money="reduceMoney" model="man"></cash-manager>
-        <hr>
     </div>
 </div>
 <div class="modal-footer">

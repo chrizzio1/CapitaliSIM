@@ -1,8 +1,8 @@
 <div ng-controller="View1Ctrl" class="">
     <div class="content">
         <div class="introduction">
-            <!-- debug:
-            <button ng-click="addMoney(100)">+ € 100</button> -->
+            debug:
+            <button ng-click="addMoney(1000)">+ € 1000</button>
             <h1>Willkommen bei CapitaliSIM!</h1>
             <p><strong>Kapitalismus ist einfach!</strong> Klicke auf "Aktivieren" um eine deiner Einnahmequellen zu aktivieren!
                 <br> Spare dein Geld und <strong>reinvestiere</strong>, um zu mehr Reichtum zu gelangen!</p>
@@ -22,11 +22,17 @@
             </button>
         </div>
         <div class="clearfix"></div>
-        <h3>Deine Geldquellen:</h3>
+        <div class="btn-group pull-right">
+            <label class="btn btn-primary" ng-model="amount" btn-radio="'1'">1x</label>
+            <label class="btn btn-primary" ng-model="amount" btn-radio="'10'">10x</label>
+            <label class="btn btn-primary" ng-model="amount" btn-radio="'100'">100x</label>
+        </div>
+        <h3 style=" margin-top: 0;margin-bottom: 20px;">Deine Geldquellen: </h3>
+        <div class="clearfix"></div>
         <div class="cash-source-wrapper">
             <div class="row">
                 <columnwrapper money="money" class="col-xs-6" ng-repeat="source in cashSources | orderBy: 'order'">
-                    <cash-source model="source" get-money="getMoney()" add-money="addMoney" reduce-money="reduceMoney"></cash-source>
+                    <cash-source model="source" get-money="getMoney()" add-money="addMoney" amount="amount" reduce-money="reduceMoney"></cash-source>
                 </columnwrapper>
             </div>
         </div>

@@ -4,6 +4,7 @@
     <!-- <div>Fortschritt: {{source.loaded}} / 100</div> -->
     <progressbar class="progress-striped active success" animate="false" min="0" max="100" value="source.loaded" type="success"><i>{{source.loaded}} / 100</i></progressbar>
     <button id="" class="btn btn-success" ng-disabled="source.amount === 0" ng-click="activate()">Aktivieren (+ {{source.cash * source.amount | currency:"€ "}})</button>
-    <button id="" class="btn btn-warning" ng-disabled="!isAffordable()" ng-click="buy()">Kaufen ( - {{source.price | currency:'€ '}})</button>
+    <button id="" class="btn btn-warning" ng-disabled="!isAffordable()" ng-click="buy(amount)">Kaufen ( - {{(source.price | buyamount:source.exp:amount) | currency:'€ '}})</button>   
+    
 </div>
 </div>
