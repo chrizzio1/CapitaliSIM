@@ -338,26 +338,13 @@ angular.module('myApp.view1', ['ngRoute', 'ngToast'])
         var total = base;
         var temp = base;
         for (var i = 1; i < amount; i++) {
-            temp = temp*exp;
+            temp = temp * exp;
             total += temp;
         }
         return total;
     }
 })
 
- .filter('sumOfValue', function () {
-    return function (data, key) {
-        // if (typeof (data) === 'undefined' && typeof (key) === 'undefined') {
-        //     return 0;
-        // }
-        // var sum = 0;
-        // for (var i = 0; i < data.length; i++) {
-        //     sum = sum + data[i][key];
-        // }
-        console.log(data)
-        return 1;
-    }
-})
 
 .controller('ModalInstanceCtrl', function($scope, $modalInstance) {
 
@@ -370,4 +357,4 @@ angular.module('myApp.view1', ['ngRoute', 'ngToast'])
     $scope.cancel = function() {
         $modalInstance.dismiss('cancel');
     };
-});
+})

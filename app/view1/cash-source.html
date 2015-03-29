@@ -1,6 +1,6 @@
 <div class="cash-source">
     <div class="source-info">
-        <h4>{{source.name}} <span class="amount"><span class="label label-warning">{{source.amount}}</span></span> <small class="green-text italic" ng-if="source.ismanaged">Manager eingestellt!</small></h4></div>
+        <h4>{{source.name}} <span class="amount"><span class="label label-warning">{{source.amount}}</span></span> <small class="pull-right green-text italic" ng-if="source.ismanaged">Manager eingestellt!</small></h4></div>
     <!-- <div>Fortschritt: {{source.loaded}} / 100</div> -->
     <progressbar class="progress-striped active success" animate="false" min="0" max="100" value="source.loaded" type="success"><i>{{source.loaded}} / 100</i></progressbar>
     <button id="" class="btn btn-success" ng-disabled="source.amount === 0" ng-click="activate()">Aktivieren (+ {{source.cash * source.amount | currency:"€ "}})</button>
